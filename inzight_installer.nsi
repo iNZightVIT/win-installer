@@ -88,6 +88,11 @@ Section "uninstall"
  RMDIR /r .update
  RMDIR /r inst
  delete launcher.R
+
+ # remove shortcuts
+ delete iNZight.lnk
+ delete VIT.lnk
+ delete Update.lnk
  
  # remove uninstaller
  delete $INSTDIR\Uninstall.exe
