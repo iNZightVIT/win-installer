@@ -83,16 +83,16 @@ Section "uninstall"
  # remove files
  RMdir /r $INSTDIR\R
  RMdir /r $INSTDIR\library
- RMDIR /r .inzight
- RMDIR /r .vit
- RMDIR /r .update
- RMDIR /r inst
- delete launcher.R
+ RMDIR /r $INSTDIR\.inzight
+ RMDIR /r $INSTDIR\.vit
+ RMDIR /r $INSTDIR\.update
+ RMDIR /r $INSTDIR\inst
+ delete $INSTDIR\launcher.R
 
  # remove shortcuts
- delete iNZight.lnk
- delete VIT.lnk
- delete Update.lnk
+ delete $INSTDIR\iNZight.lnk
+ delete $INSTDIR\VIT.lnk
+ delete $INSTDIR\Update.lnk
  
  # remove uninstaller
  delete $INSTDIR\Uninstall.exe
