@@ -17,5 +17,6 @@ install.packages(
     'vit',
     'FutureLearnData'
    ),
-   dependencies = TRUE
+   dependencies = TRUE,
+   type = "binary"
 )
