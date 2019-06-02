@@ -10,7 +10,7 @@ RequestExecutionLevel user
 InstallDir $DOCUMENTS\${APPNAME}
 Name "${APPNAME} ${VERSION}"
 # Icon "icon.ico"
-OutFile ${APPNAME}-installer.exe"
+outFile "${APPNAME}-installer.exe"
 
 # additional meta information about the program
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
