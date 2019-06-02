@@ -77,7 +77,6 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 }
 
 do_update <- function() {
-	VERSION <- 1.3
 	source(
 		'https://raw.githubusercontent.com/iNZightVIT/win-installer/master/update.R'
 	)
