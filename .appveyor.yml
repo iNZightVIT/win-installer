@@ -6,7 +6,7 @@ init:
         Import-Module '..\appveyor-tool.ps1'
 
 install:
-#  ps: Bootstrap
+  ps: Bootstrap
 
 #cache:
 # - c:\RLibrary
@@ -43,6 +43,7 @@ test_script:
 #  - travis-tool.sh run_tests
 
 on_success:
+  - DIR
 #  - Rscript -e "covr::codecov()"
 
 on_failure:
