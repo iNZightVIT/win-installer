@@ -67,3 +67,6 @@ artifacts:
 
   - path: '\*_*.zip'
     name: Bits
+
+  - path: '\*.exe'
+    name: Installer
