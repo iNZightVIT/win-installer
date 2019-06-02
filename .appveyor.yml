@@ -30,7 +30,7 @@ environment:
 build_script:
   - mv C:\R R
   - mv C:\RLibrary library
-  - Rscript rgui_settings.R
+  - R\bin\Rscript.exe rgui_settings.R
   - makensis.exe inzight_installer.nsi
 
 #test_script:
