@@ -18,7 +18,7 @@ install:
 # Adapt as necessary starting from here
 
 build_script:
-  - nsis inzight_installer.nsi
+  - makensis.exe inzight_installer.nsi
 # - travis-tool.sh install_deps
 # - appveyor DownloadFile "http://ftp.gnome.org/pub/gnome/binaries/win32/gtk+/2.22/gtk+-bundle_2.22.1-20101227_win32.zip" -FileName gtk32.zip
 # - appveyor DownloadFile "http://ftp.gnome.org/pub/gnome/binaries/win64/gtk+/2.22/gtk+-bundle_2.22.1-20101229_win64.zip" -FileName gtk64.zip
