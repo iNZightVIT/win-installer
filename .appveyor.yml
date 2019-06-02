@@ -7,7 +7,7 @@ init:
 
 install:
   - ps: Bootstrap
-  - Rscript -e 'install_inzight.R'
+  - Rscript install_inzight.R
 
 environment:
   R_VERSION: release
