@@ -1,4 +1,5 @@
 # iNZightVIT Windows Installer
+[![Build status](https://ci.appveyor.com/api/projects/status/9v7ur7ljd9pq950g?svg=true)](https://ci.appveyor.com/project/tmelliott/win-installer)
 
 ## Build release
 
