@@ -7,8 +7,8 @@ init:
 
 install:
   - ps: Bootstrap
-  - travis-tool.sh install_deps
   - mv C:\R R
+  - travis-tool.sh install_deps
 
 environment:
   R_VERSION: release
