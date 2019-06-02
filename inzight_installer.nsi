@@ -31,4 +31,31 @@ page instfiles
 Section "install"
  setOutPath $INSTDIR
  
+ # include uninstaller
+ writeUninstaller "$INSTDIR\Uninstall.exe"
+SectionEnd
+
+
+## Define the uninstaller
+function un.onInit
+ MessageBox MB_OKCANCEL "Permanently remove ${APPNAME}?" IDOK next
+  Abort
+ next:
+functionEnd
+
+Section "uninstall"
+ # remove shortcuts
+ 
+ # remove start menu programs
+ 
+ # remove files
+ 
+ # remove uninstaller
+ delete $INSTDIR\Uninstall.exe
+ 
+ # remove directory
+ RMDir $INSTDIR
+ 
+ # and finished
+ MessageBox MB_OK "iNZightVIT has been uninstalled."
 SectionEnd
