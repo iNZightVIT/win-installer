@@ -32,7 +32,7 @@ Section "install"
  setOutPath $INSTDIR
  
  # add R 
- File /r C:\R
+ File /r "C:\R"
  
  # include uninstaller
  writeUninstaller "$INSTDIR\Uninstall.exe"
