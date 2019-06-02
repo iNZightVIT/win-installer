@@ -52,6 +52,7 @@ Section "uninstall"
  # remove start menu programs
  
  # remove files
+ RMdir /r $INSTDIR\R
  
  # remove uninstaller
  delete $INSTDIR\Uninstall.exe
