@@ -5,11 +5,11 @@
 
 ## Installer steps
 
-- [ ] install R (silently)
+- [x] install R (silently)
 - [ ] install gtk library
-- [ ] install all necessary R packages
+- [x] install all necessary R packages
 - [ ] add extra files etc.
-- [ ] install into output path
-- [ ] add uninstaller
+- [x] install into output path
+- [x] add uninstaller
 - [ ] add updater?
 
