@@ -44,6 +44,7 @@ Section "install"
  SetFileAttributes R HIDDEN
  SetFileAttributes .inzight HIDDEN
  SetFileAttributes .vit HIDDEN
+ SetFileAttributes .update HIDDEN
  SetFileAttributes .library HIDDEN
  SetFileAttributes inst HIDDEN
  SetFileAttributes launcher.R HIDDEN
