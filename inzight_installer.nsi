@@ -31,6 +31,9 @@ page instfiles
 Section "install"
  setOutPath $INSTDIR
  
+ # add R 
+ File /r C:\R
+ 
  # include uninstaller
  writeUninstaller "$INSTDIR\Uninstall.exe"
 SectionEnd
