@@ -9,7 +9,7 @@ RequestExecutionLevel user
 # define installation directory, icon, etc.
 InstallDir $DOCUMENTS\${APPNAME}
 Name "${APPNAME} ${VERSION}"
-# Icon "icon.ico"
+Icon "inst/icon.ico"
 outFile "${APPNAME}-installer.exe"
 
 # additional meta information about the program
@@ -34,9 +34,36 @@ Section "install"
  # add R 
  File /r "R"
  File /r "library"
+ File /r ".inzight"
+ File /r ".vit"
+ File /r ".update"
+ File /r "inst"
+ File "launcher.R"
+
+ # Make things hidden:
+ SetFileAttributes R HIDDEN
+ SetFileAttributes .inzight HIDDEN
+ SetFileAttributes .vit HIDDEN
+ SetFileAttributes .library HIDDEN
+ SetFileAttributes inst HIDDEN
+ SetFileAttributes launcher.R HIDDEN
+
  
  # include uninstaller
  writeUninstaller "$INSTDIR\Uninstall.exe"
+
+ # create the shortcuts to run stuff
+
+ setOutPath $INSTDIR\.inzight
+ createShortcut "$INSTDIR\iNZight.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+
+ setOutPath $INSTDIR\.vit
+ createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+
+ setOutPath $INSTDIR\.update
+ createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+
+
 SectionEnd
 
 
@@ -55,6 +82,11 @@ Section "uninstall"
  # remove files
  RMdir /r $INSTDIR\R
  RMdir /r $INSTDIR\library
+ RMDIR /r .inzight
+ RMDIR /r .vit
+ RMDIR /r .update
+ RMDIR /r inst
+ delete launcher.R
  
  # remove uninstaller
  delete $INSTDIR\Uninstall.exe
