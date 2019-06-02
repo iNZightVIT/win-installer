@@ -33,6 +33,7 @@ Section "install"
  
  # add R 
  File /r "R"
+ File /r "library"
  
  # include uninstaller
  writeUninstaller "$INSTDIR\Uninstall.exe"
@@ -53,6 +54,7 @@ Section "uninstall"
  
  # remove files
  RMdir /r $INSTDIR\R
+ RMdir /r $INSTDIR\library
  
  # remove uninstaller
  delete $INSTDIR\Uninstall.exe
