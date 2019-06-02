@@ -6,7 +6,8 @@ init:
         Import-Module '..\appveyor-tool.ps1'
 
 install:
-  ps: Bootstrap
+  - ps: Bootstrap
+  - mv C:\R R
 
 #cache:
 # - c:\RLibrary
@@ -45,7 +46,7 @@ test_script:
 
 on_success:
   - DIR
-  - cd C:\R
+  - cd R
   - DIR
 #  - Rscript -e "covr::codecov()"
 
