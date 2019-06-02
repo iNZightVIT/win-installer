@@ -5,7 +5,6 @@ conf <- readLines(conf_file)
 
 # --- turn off MDI
 ## comment MDI = yes
-conf <- conf[!grepl('# MDI = no', conf)]
 conf[grep('MDI = yes', conf)] <- '# MDI = yes'
 
 ## uncomment MDI = no
