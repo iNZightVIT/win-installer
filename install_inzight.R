@@ -5,10 +5,10 @@ options(
   )
 )
 
+# install iNZight packages (except iNZightModules)
 install.packages(
   c(
     'iNZight',
-    'iNZightModules',
     'iNZightPlots',
     'iNZightMR',
     'iNZightTS',
@@ -19,4 +19,15 @@ install.packages(
    ),
    dependencies = TRUE,
    type = "binary"
+)
+
+# install iNZightModules, and manually some of the dependencies
+# (basically, ensuring iNZightMaps and sf aren't installed)
+install.packages(
+  c(
+    'iNZightModules',
+    'rgl',
+    'mgcv'
+  ),
+  type = "binary"
 )
