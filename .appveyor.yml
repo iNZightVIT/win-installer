@@ -11,7 +11,8 @@ install:
 #cache:
 # - c:\RLibrary
 
-#environment:
+environment:
+  R_VERSION: release
 #  USE_RTOOLS: true
 #  R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
 
@@ -43,6 +44,8 @@ test_script:
 #  - travis-tool.sh run_tests
 
 on_success:
+  - DIR
+  - cd C:\R
   - DIR
 #  - Rscript -e "covr::codecov()"
 
