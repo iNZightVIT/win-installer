@@ -46,11 +46,11 @@ on_failure:
 deploy:
   tag: $(APPVEYOR_REPO_TAG_NAME)
   release: 'iNZightVIT Windows Installer $(APPVEYOR_REPO_TAG_NAME)'
-  # description: 'Windows Binary'
+  description: 'Latest Windows iNZightVIT installer'
   provider: GitHub
   auth_token:
     secure: OQ3078QGelP+SykLVd/mzPYM0nT6iWlBVweiT80TG3vsEMXJSC/GfslihNZ1Z4av
-  artifact: /.*_.*\.exe/
+  artifact: 'iNZightVIT-installer.exe'
   draft: false
   prerelease: false
   force_update: true
