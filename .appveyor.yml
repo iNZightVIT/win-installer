@@ -50,7 +50,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: OQ3078QGelP+SykLVd/mzPYM0nT6iWlBVweiT80TG3vsEMXJSC/GfslihNZ1Z4av
-  artifact: /.*_.*\.zip/
+  artifact: /.*_.*\.exe/
   draft: false
   prerelease: false
   force_update: true
@@ -77,5 +77,5 @@ artifacts:
   - path: '\*_*.zip'
     name: Bits
 
-  # - path: '\*.exe'
-  #   name: Installer
+  - path: 'iNZightVIT-installer.exe'
+    name: Installer
