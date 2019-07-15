@@ -43,6 +43,21 @@ on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
 
+deploy:
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  release: 'iNZightVIT Windows Installer $(APPVEYOR_REPO_TAG_NAME)'
+  # description: 'Windows Binary'
+  provider: GitHub
+  auth_token:
+    secure: OQ3078QGelP+SykLVd/mzPYM0nT6iWlBVweiT80TG3vsEMXJSC/GfslihNZ1Z4av
+  artifact: /.*_.*\.zip/
+  draft: false
+  prerelease: false
+  force_update: true
+  on:
+    # branch: master
+    APPVEYOR_REPO_TAG: true        # deploy on tag push only
+
 artifacts:
   - path: '*.Rcheck\**\*.log'
     name: Logs
@@ -62,5 +77,5 @@ artifacts:
   - path: '\*_*.zip'
     name: Bits
 
-  - path: '\*.exe'
-    name: Installer
+  # - path: '\*.exe'
+  #   name: Installer
