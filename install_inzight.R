@@ -15,7 +15,8 @@ install.packages(
     'iNZightTools',
     'iNZightRegression',
     'vit',
-    'FutureLearnData'
+    'FutureLearnData',
+    'iNZightUpdate'
    ),
    dependencies = TRUE,
    type = "binary"
