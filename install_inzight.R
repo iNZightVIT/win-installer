@@ -1,7 +1,7 @@
 options(
   repos = c(
     inzight = 'https://r.docker.stat.auckland.ac.nz',
-    CRAN = 'https://cran.rstudio.com'
+    CRAN = 'https://cran.r-project.org'
   )
 )
 
