@@ -62,7 +62,7 @@ Section "install"
  createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
 
  setOutPath $INSTDIR\.update
- createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+ createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWNORMAL
 
 
 SectionEnd
