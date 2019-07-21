@@ -77,7 +77,10 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 }
 
 do_update <- function() {
-	source(
-		'https://raw.githubusercontent.com/iNZightVIT/win-installer/master/update.R'
-	)
+	# update the updater if any updates are available
+	cat("* Checking if the updater needs updating ...\n")
+	utils::update.packages("iNZightUpdate")
+
+	# then run the updater
+	iNZightUpdate::update("windows")
 }
