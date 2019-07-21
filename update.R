@@ -1,7 +1,8 @@
-## The windows updater is going to be individual
+repo <- "https://r.docker.stat.auckland.ac.nz"
 
-update_inzight <- function() {
-	utils::update.packages(ask = FALSE, type = 'binary')
-}
+# update the updater if any updates are available
+cat("* Checking if the updater needs updating ...\n")
+utils::update.packages("iNZightUpdate", repos = repo)
 
-update_inzight()
+# then run the updater
+iNZightUpdate::update("windows")
