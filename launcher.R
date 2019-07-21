@@ -79,7 +79,7 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 do_update <- function() {
 	# update the updater if any updates are available
 	cat("* Checking if the updater needs updating ...\n")
-	utils::update.packages("iNZightUpdate")
+	utils::update.packages("iNZightUpdate", ask = FALSE)
 
 	# then run the updater
 	iNZightUpdate::update("windows")
