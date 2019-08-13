@@ -1,7 +1,7 @@
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 # define version from env vars/magical stuff
-!define VERSION "3.4.1"
+!define VERSION "3.4.3"
 
 # apparently this should be specified for all installers
 RequestExecutionLevel user
