@@ -1,10 +1,9 @@
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
-# define version from env vars/magical stuff
-!if "$%APPVEYOR_REPO_TAG_NAME%" == "${U+24}%APPVEYOR_REPO_TAG_NAME%"
+# define version from env vars (otherwise it's a dev version)
 !define VERSION "3.4.dev"
-!else
-!define VERSION "$%APPVEYOR_REPO_TAG_NAME%"
+!if "$%APPVEYOR_REPO_TAG_NAME%" == "${U+24}%APPVEYOR_REPO_TAG_NAME%"
+!define /redef VERSION "$%APPVEYOR_REPO_TAG_NAME%"
 !endif
 
 # apparently this should be specified for all installers
