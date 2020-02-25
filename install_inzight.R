@@ -18,7 +18,8 @@ install.packages(
     'FutureLearnData',
     'iNZightUpdate'
    ),
-   dependencies = TRUE
+   dependencies = TRUE,
+   type = "binary"
 )
 
 # install iNZightModules, and manually some of the dependencies
@@ -28,5 +29,6 @@ install.packages(
     'iNZightModules',
     'rgl',
     'mgcv'
-  )
+  ),
+  type = "binary"
 )
