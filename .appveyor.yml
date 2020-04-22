@@ -33,12 +33,12 @@ build_script:
   - R\bin\Rscript.exe rgui_settings.R
   - makensis.exe inzight_installer.nsi
 
-#test_script:
+# test_script:
 #  - md C:\Users\appveyor\Documents\iNZightVIT
 #  - travis-tool.sh run_tests
 
 #on_success:
-  
+
 on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
