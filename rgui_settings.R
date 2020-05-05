@@ -19,11 +19,4 @@ writeLines(conf, conf_file)
 
 # --- prettier GTK theme engine
 gtk_file <- file.path('library', 'RGtk2', 'gtk', 'i386', 'etc', 'gtk-2.0', 'gtkrc')
-list.files("library")
-list.files("library/RGtk2")
-list.files("library/RGtk2/gtk")
-list.files("library/RGtk2/gtk/i386")
-list.files("library/RGtk2/gtk/i386/etc")
-list.files("library/RGtk2/gtk/i386/etc/gtk-2.0")
-if (file.exists(gtk_file))
-    writeLines('gtk-theme-name = "MS-Windows"', gtk_file)
+writeLines('gtk-theme-name = "MS-Windows"', gtk_file)
