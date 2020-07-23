@@ -1,7 +1,7 @@
 - [x] set up travis or appveyor (which ever seems better for automation)
-- [x] attempt to build a simple NSIS installer for windows 
-- [ ] build the actual windows installer (from iNZightVIT/iNZightVIT-WIN)
-- [ ] deploy to github
+- [x] attempt to build a simple NSIS installer for windows
+- [x] build the actual windows installer (from iNZightVIT/iNZightVIT-WIN)
+- [x] deploy to github
 
 
 ## Installer steps
@@ -13,4 +13,3 @@
 - [x] install into output path
 - [x] add uninstaller
 - [ ] add updater?
-
