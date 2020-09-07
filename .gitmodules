@@ -1,0 +1,3 @@
+[submodule "iNZightTools"]
+	path = iNZightTools
+	url = git@github.com:iNZightVIT/iNZightTools
