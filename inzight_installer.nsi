@@ -1,9 +1,10 @@
+Unicode true
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 # define version from env vars (otherwise it's a dev version)
 !define VERSION "0.0.0.9000"
-!if "$%APPVEYOR_REPO_TAG_NAME%" != "${U+24}%APPVEYOR_REPO_TAG_NAME%"
-!define /redef VERSION "$%APPVEYOR_REPO_TAG_NAME%"
+!if "$%INSTALLER_VERSION%" != "${U+24}%INSTALLER_VERSION%"
+!define /redef VERSION "$%INSTALLER_VERSION%"
 !endif
 
 # apparently this should be specified for all installers
@@ -34,7 +35,7 @@ page instfiles
 Section "install"
     setOutPath $INSTDIR
 
-    # add R 
+    # add R
     File /r "R"
     File /r "library"
     File /r ".inzight"
