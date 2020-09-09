@@ -1,8 +1,0 @@
-[submodule "sources/iNZightTools"]
-	path = sources/iNZightTools
-	url = git@github.com:iNZightVIT/iNZightTools
-	branch = master
-[submodule "sources/iNZight"]
-	path = sources/iNZight
-	url = git@github.com:iNZightVIT/iNZight
-	branch = master

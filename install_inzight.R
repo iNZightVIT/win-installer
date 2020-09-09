@@ -19,7 +19,7 @@ inz_pkgs <- c(
 
 # install iNZight packages (except iNZightModules)
 install.packages(
-  inz_pkgs
+  inz_pkgs,
   dependencies = TRUE,
   type = "binary"
 )
