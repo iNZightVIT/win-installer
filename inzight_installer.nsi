@@ -34,13 +34,15 @@ page instfiles
 Section "install"
     setOutPath $INSTDIR
 
-    # add R 
+    # add R
     File /r "R"
     File /r "library"
     File /r ".inzight"
     File /r ".vit"
     File /r ".update"
     File /r "inst"
+    File /r ".cache"
+    File /r ".config"
     File "launcher.R"
 
     # Make things hidden:
@@ -50,6 +52,8 @@ Section "install"
     SetFileAttributes .update HIDDEN
     SetFileAttributes .library HIDDEN
     SetFileAttributes inst HIDDEN
+    SetFileAttributes .cache HIDDEN
+    SetFileAttributes .config HIDDEN
     SetFileAttributes launcher.R HIDDEN
 
 
@@ -87,6 +91,8 @@ Section "uninstall"
     RMDIR /r $INSTDIR\.vit
     RMDIR /r $INSTDIR\.update
     RMDIR /r $INSTDIR\inst
+    RMDIR /r $INSTDIR\.config
+    RMDIR /r $INSTDIR\.cache
     delete $INSTDIR\launcher.R
 
     # remove desktop shortcuts

@@ -12,7 +12,9 @@ options(
 
 # is this really necessary ???
 Sys.setenv(
-	'R_HOME' = file.path(getwd(), 'R')
+	'R_HOME' = file.path(getwd(), 'R'),
+	'R_USER_CONFIG_DIR' = file.path(getwd(), ".config"),
+	'R_USER_CACHE_DIR' = file.path(getwd(), ".cache")
 )
 
 # set library path
@@ -36,8 +38,8 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 		suppressWarnings({
 			splashImg <- png::readPNG(
 				file.path(
-					getwd(), 
-					"inst", 
+					getwd(),
+					"inst",
 					"inzight-banner.png"
 				),
 			    exists("rasterImage")

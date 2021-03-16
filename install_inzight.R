@@ -32,3 +32,8 @@ install.packages(
   ),
   type = "binary"
 )
+
+# create directories
+dir.create(file.path(".cache", "R", "iNZight"))
+dir.create(file.path(".config", "R", "iNZight"))
+writeLines("list()\n", file.path(".config", "R", "iNZight", "preferences.R"))
