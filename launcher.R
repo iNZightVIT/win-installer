@@ -36,8 +36,8 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 		suppressWarnings({
 			splashImg <- png::readPNG(
 				file.path(
-					getwd(), 
-					"inst", 
+					getwd(),
+					"inst",
 					"inzight-banner.png"
 				),
 			    exists("rasterImage")
