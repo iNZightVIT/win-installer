@@ -12,7 +12,9 @@ options(
 
 # is this really necessary ???
 Sys.setenv(
-	'R_HOME' = file.path(getwd(), 'R')
+	'R_HOME' = file.path(getwd(), 'R'),
+	'R_USER_CONFIG_DIR' = file.path(getwd(), ".config"),
+	'R_USER_CACHE_DIR' = file.path(getwd(), ".cache")
 )
 
 # set library path
