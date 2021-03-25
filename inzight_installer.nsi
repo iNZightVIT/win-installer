@@ -41,9 +41,11 @@ Section "install"
     File /r ".vit"
     File /r ".update"
     File /r "inst"
-    File /r ".cache"
-    File /r ".config"
     File "launcher.R"
+
+    CreateDirectory $INSTDIR\.cache
+    CreateDirectory $INSTDIR\.config
+    CreateDirectory $INSTDIR\data
 
     # Make things hidden:
     SetFileAttributes R HIDDEN

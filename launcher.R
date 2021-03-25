@@ -14,7 +14,8 @@ options(
 Sys.setenv(
 	'R_HOME' = file.path(getwd(), 'R'),
 	'R_USER_CONFIG_DIR' = file.path(getwd(), ".config"),
-	'R_USER_CACHE_DIR' = file.path(getwd(), ".cache")
+	'R_USER_CACHE_DIR' = file.path(getwd(), ".cache"),
+	'R_USER_DATA_DIR' = file.path(getwd(), "data")
 )
 
 # set library path

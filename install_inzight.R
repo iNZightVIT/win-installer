@@ -34,6 +34,6 @@ install.packages(
 )
 
 # create directories
-dir.create(file.path(".cache", "R", "iNZight"), recursive = TRUE)
-dir.create(file.path(".config", "R", "iNZight"), recursive = TRUE)
-writeLines("list()\n", file.path(".config", "R", "iNZight", "preferences.R"))
+# dir.create(file.path(".cache", "R", "iNZight"), recursive = TRUE)
+# dir.create(file.path(".config", "R", "iNZight"), recursive = TRUE)
+# writeLines("list()\n", file.path(".config", "R", "iNZight", "preferences.R"))
