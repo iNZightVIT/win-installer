@@ -2,7 +2,6 @@
 conf_file <- file.path('R', 'etc', 'Rconsole')
 conf <- readLines(conf_file)
 
-
 # --- turn off MDI
 ## comment MDI = yes
 conf[grep('MDI = yes', conf)] <- '# MDI = yes'
