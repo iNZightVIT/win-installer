@@ -10,12 +10,12 @@ options(
 	help_type = 'html'
 )
 
-# is this really necessary ???
 Sys.setenv(
 	'R_HOME' = file.path(getwd(), 'R'),
 	'R_USER_CONFIG_DIR' = file.path(getwd(), ".config"),
 	'R_USER_CACHE_DIR' = file.path(getwd(), ".cache"),
-	'R_USER_DATA_DIR' = file.path(getwd(), "data")
+	'R_USER_DATA_DIR' = file.path(getwd(), "data"),
+	'INZIGHT_MODULES_DIR' = file.path(getwd(), "modules")
 )
 
 # set library path
@@ -73,8 +73,8 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 
 	suppressWarnings(
 		switch(app,
-			'inzight' = iNZight(disposeR = TRUE),
-			'vit' = iNZightVIT(disposeR = TRUE)
+			'inzight' = iNZight(dispose_fun = q, save = "no"),
+			'vit' = iNZightVIT(dispose = TRUE)
 		)
 	)
 }
