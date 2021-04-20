@@ -18,10 +18,11 @@ Sys.setenv(
 	'INZIGHT_MODULES_DIR' = file.path(getwd(), "modules")
 )
 
-## Create directories:
-dir.create(tools::R_user_dir("iNZight", "config"), recursive = TRUE)
-dir.create(tools::R_user_dir("iNZight", "cache"), recursive = TRUE)
-dir.create(tools::R_user_dir("iNZight", "data"), recursive = TRUE)
+## Create directories if they don't already exist:
+create_dir <- function(dir) if (!dir.exists(dir)) dir.create(dir, recursive = TRUE)
+create_dir(tools::R_user_dir("iNZight", "config"))
+create_dir(tools::R_user_dir("iNZight", "cache"))
+create_dir(tools::R_user_dir("iNZight", "data"))
 
 # set library path
 .libPaths(file.path(getwd(), 'library'))
