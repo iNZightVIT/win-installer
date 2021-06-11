@@ -36,24 +36,70 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 		return()
 	}
 
-	# display loading screen
-	grDevices::dev.new(width = 5, height = 2)
-	grid::grid.newpage()
-	# Will try to draw a raster if possible, otherwise an array of pixels
+	splash_screen <- function(app) {
+		libname <- pkgname <- app
+		if (app == "inzight") libname <- pkgname <- "iNZight"
+		if (app == "vit") pkgname <- "VIT"
 
-	try({
-		suppressWarnings({
-			splashImg <- png::readPNG(
-				file.path(
-					getwd(),
-					"inst",
-					"inzight-banner.png"
-				),
-			    exists("rasterImage")
-			)
-		})
-		grid::grid.raster(splashImg)
-	}, silent = TRUE)
+		version <- packageVersion(libname)
+		date <- as.Date(packageDescription(libname)$Date)
+
+		tt <- tcltk::tktoplevel(
+			background = "white"
+		)
+		tcltk::tkwm.title(tt, glue::glue("{pkgname} {version}"))
+
+		# logo
+		tcltk::tcl("image", "create", "photo", "inzlogo", 
+			file = file.path(getwd(), "inst", "inzight_logo.png"))
+		l <- tcltk::ttklabel(tt, 
+			image = "inzlogo", 
+			compound = "image",
+			background = "white"
+		)
+		tcltk::tkpack(l, padx = 100, pady = 10)
+
+		# version info
+		v <- tcltk::tklabel(tt,
+			text = glue::glue(
+				"Version {version} - Released {format(date, '%e %b, %Y')}"
+			),
+			background = "white"
+		)
+		tcltk::tkpack(v)
+
+		# R info
+		rv <- tcltk::tklabel(tt,
+			text = glue::glue(
+				"Running on R version {getRversion()}"
+			),
+			background = "white"
+		)
+		tcltk::tkpack(rv, pady = c(0, 10))
+
+		# sponsors
+		sp <- tcltk::tklabel(tt,
+			text = "Sponsored by: ",
+			background = "white",
+			anchor = "w"
+		)
+		tcltk::tkpack(sp, 
+			padx = 10, pady = c(0, 10), 
+			fill = "x", expand = TRUE)
+
+		sponsors <- readLines(file.path(getwd(), "inst", "sponsors.txt"))		
+		sps <- tcltk::tklabel(tt,
+			text = paste(sponsors, collapse = ", "),
+			background = "white",
+			anchor = "w",
+			wraplength = 500
+		)
+		tcltk::tkpack(sps,
+			padx = 20, pady = c(0, 20),
+			fill = "x", expand = TRUE)
+
+		tt
+	}
 
 	message("(Dept of Statistics, Uni. of Auckland)")
 	message("")
@@ -73,16 +119,17 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 		})
 	)
 
-	# Killing the splash screen, assigning to remove print
-	tmp <- grDevices::dev.off()
-	rm(tmp)
-
 	suppressWarnings(
 		switch(app,
 			'inzight' = iNZight(dispose_fun = q, save = "no"),
 			'vit' = iNZightVIT(dispose = TRUE)
 		)
 	)
+
+	# Killing the splash screen, assigning to remove print
+	tmp <- grDevices::dev.off()
+	rm(tmp)
+
 }
 
 do_update <- function() {
