@@ -1,6 +1,8 @@
-University of Auckland
-Te Rourou Tātaritanga - MBIE Endeavour Fund
-iNZight Analytics
-Statistics New Zealand
-Australian Bureau of Statistics
-Ministry of Education
+uoa_logo.png
+terourou_logo.png
+mbie_logo.png
+
+inzight_analytics_logo.png
+stats_nz.png
+abs_logo.png
+minedu_logo.png
