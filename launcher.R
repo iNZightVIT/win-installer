@@ -10,22 +10,23 @@ options(
 	help_type = 'html'
 )
 
-USER_DIR <- "some/path/to/users/appdata"
-SESSION_DIR <- "some/nonpersistent/location"
-PROJECT_DIR <- "path/to/project" # prompt on start-up ... ?
+# USER_DIR <- "some/path/to/users/appdata"
+# SESSION_DIR <- "some/nonpersistent/location"
+# PROJECT_DIR <- "path/to/project" # prompt on start-up ... ?
 
 Sys.setenv(
 	'R_HOME' = file.path(getwd(), 'R'),
-	'R_USER_CONFIG_DIR' = file.path(USER_DIR, ".config"),
-	'R_USER_CACHE_DIR' = file.path(CACHE_DIR, ".cache"),
-	'R_USER_DATA_DIR' = file.path(PROJECT_DIR, "data"),
-	'INZIGHT_MODULES_DIR' = file.path(PROJECT_DIR, "modules")
+	'LOCK_PACKAGES' = TRUE # can prevent any update/install of packages
+	# 'R_USER_CONFIG_DIR' = file.path(USER_DIR, ".config"),
+	# 'R_USER_CACHE_DIR' = file.path(CACHE_DIR, ".cache"),
+	# 'R_USER_DATA_DIR' = file.path(PROJECT_DIR, "data"),
+	# 'INZIGHT_MODULES_DIR' = file.path(PROJECT_DIR, "modules")
 )
 
 #### Notes
-# * datalab wont allow installing packages ... will need to modify everywhere (e.g., modules) 
+# * datalab wont allow installing packages ... will need to modify everywhere (e.g., modules)
 #   that tries to do so.
-# 
+#
 
 ## Create directories if they don't already exist:
 create_dir <- function(dir) if (!dir.exists(dir)) dir.create(dir, recursive = TRUE)
