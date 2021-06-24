@@ -1,10 +1,10 @@
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 # define version from env vars (otherwise it's a dev version)
-!define VERSION "0.0.0.9000"
-!if "$%APPVEYOR_REPO_TAG_NAME%" != "${U+24}%APPVEYOR_REPO_TAG_NAME%"
-!define /redef VERSION "$%APPVEYOR_REPO_TAG_NAME%"
-!endif
+!define VERSION "$%INZIGHT_VERSION%"
+#!if "$%APPVEYOR_REPO_TAG_NAME%" != "${U+24}%APPVEYOR_REPO_TAG_NAME%"
+#!define /redef VERSION "$%APPVEYOR_REPO_TAG_NAME%"
+#!endif
 
 # apparently this should be specified for all installers
 RequestExecutionLevel user
@@ -43,9 +43,9 @@ Section "install"
     File /r "inst"
     File "launcher.R"
 
-    CreateDirectory $INSTDIR\.cache
-    CreateDirectory $INSTDIR\.config
-    CreateDirectory $INSTDIR\data
+    ; CreateDirectory $INSTDIR\.cache
+    #CreateDirectory $INSTDIR\.config
+    ; CreateDirectory $INSTDIR\data
 
     # Make things hidden:
     SetFileAttributes R HIDDEN
@@ -54,8 +54,8 @@ Section "install"
     SetFileAttributes .update HIDDEN
     SetFileAttributes .library HIDDEN
     SetFileAttributes inst HIDDEN
-    SetFileAttributes .cache HIDDEN
-    SetFileAttributes .config HIDDEN
+    ; SetFileAttributes .cache HIDDEN
+    ; SetFileAttributes .config HIDDEN
     SetFileAttributes launcher.R HIDDEN
 
 
