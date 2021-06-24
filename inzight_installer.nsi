@@ -1,7 +1,7 @@
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 # define version from env vars (otherwise it's a dev version)
-!define VERSION "$%INZIGHT_VERSION%"
+!define VERSION "$%INSTALLER_VERSION%"
 #!if "$%APPVEYOR_REPO_TAG_NAME%" != "${U+24}%APPVEYOR_REPO_TAG_NAME%"
 #!define /redef VERSION "$%APPVEYOR_REPO_TAG_NAME%"
 #!endif
@@ -93,8 +93,8 @@ Section "uninstall"
     RMDIR /r $INSTDIR\.vit
     RMDIR /r $INSTDIR\.update
     RMDIR /r $INSTDIR\inst
-    RMDIR /r $INSTDIR\.config
-    RMDIR /r $INSTDIR\.cache
+    ; RMDIR /r $INSTDIR\.config
+    ; RMDIR /r $INSTDIR\.cache
     delete $INSTDIR\launcher.R
 
     # remove desktop shortcuts
