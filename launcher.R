@@ -16,7 +16,10 @@ options(
 
 Sys.setenv(
 	'R_HOME' = file.path(getwd(), 'R'),
-	'LOCK_PACKAGES' = TRUE # can prevent any update/install of packages
+	# can prevent any update/install of packages
+	'LOCK_PACKAGES' = TRUE,
+	# prevent bootstrapping (computationally intensive)
+	'DISABLE_BOOTSTRAPS' = TRUE
 	# 'R_USER_CONFIG_DIR' = file.path(USER_DIR, ".config"),
 	# 'R_USER_CACHE_DIR' = file.path(CACHE_DIR, ".cache"),
 	# 'R_USER_DATA_DIR' = file.path(PROJECT_DIR, "data"),
