@@ -15,7 +15,8 @@ Sys.setenv(
 	'R_USER_CONFIG_DIR' = file.path(getwd(), ".config"),
 	'R_USER_CACHE_DIR' = file.path(getwd(), ".cache"),
 	'R_USER_DATA_DIR' = file.path(getwd(), "data"),
-	'INZIGHT_MODULES_DIR' = file.path(getwd(), "modules")
+	'INZIGHT_MODULES_DIR' = file.path(getwd(), "modules"),
+	'R_CACHE_ROOTPATH' = file.pathc(getwd(), ".cache")
 )
 
 ## Create directories if they don't already exist:
