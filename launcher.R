@@ -101,7 +101,13 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 do_update <- function() {
 	# update the updater if any updates are available
 	cat("* Checking if the updater needs updating ...\n")
-	utils::update.packages("iNZightUpdate", ask = FALSE)
+	current <- utils::packageVersion('iNZightUpdate')
+	ap <- utils::available.packages(repos = options()$repos[1])
+	if ("iNZightUpdate" %in% rownames(ap)) {
+		latest <- ap['iNZightUpdate', 'Version']
+		if (current < numeric_version(latest))
+			utils::install.packages('iNZightUpdate')
+	}
 
 	# then run the updater
 	iNZightUpdate::update("windows")
