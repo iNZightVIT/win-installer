@@ -80,7 +80,7 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 
 	awin <- NULL
 	if (app == "inzight" &&
-		utils::packageVersion("iNZight") > numeric_version('4.1.3')) {
+		utils::packageVersion("iNZight") > numeric_version('4.1.4')) {
 
 		awin <- iNZight:::iNZAboutWidget$new(
 			title = "Loading iNZight ..."
