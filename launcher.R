@@ -3,16 +3,10 @@ setwd('..')
 
 
 options(
-	# repos = c(
-	# 	inzight = 'https://r.docker.stat.auckland.ac.nz',
-	# 	CRAN = 'https://cran.r-project.org'
-	# ),
-	help_type = 'html'
+	help_type = 'html',
+	inzight.disable.bootstraps = TRUE,
+	inzight.lock.packages = TRUE
 )
-
-# USER_DIR <- "some/path/to/users/appdata"
-# SESSION_DIR <- "some/nonpersistent/location"
-# PROJECT_DIR <- "path/to/project" # prompt on start-up ... ?
 
 Sys.setenv(
 	'R_HOME' = file.path(getwd(), 'R'),
@@ -20,10 +14,6 @@ Sys.setenv(
 	'LOCK_PACKAGES' = TRUE,
 	# prevent bootstrapping (computationally intensive)
 	'DISABLE_BOOTSTRAPS' = TRUE
-	# 'R_USER_CONFIG_DIR' = file.path(USER_DIR, ".config"),
-	# 'R_USER_CACHE_DIR' = file.path(CACHE_DIR, ".cache"),
-	# 'R_USER_DATA_DIR' = file.path(PROJECT_DIR, "data"),
-	# 'INZIGHT_MODULES_DIR' = file.path(PROJECT_DIR, "modules")
 )
 
 #### Notes
