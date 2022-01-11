@@ -18,5 +18,5 @@ writeLines(conf, conf_file)
 
 
 # --- prettier GTK theme engine
-gtk_file <- file.path('library', 'RGtk2', 'gtk', 'i386', 'etc', 'gtk-2.0', 'gtkrc')
+gtk_file <- file.path('library', 'RGtk2', 'gtk', 'x64', 'etc', 'gtk-2.0', 'gtkrc')
 writeLines('gtk-theme-name = "MS-Windows"', gtk_file)

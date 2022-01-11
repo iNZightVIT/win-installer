@@ -59,15 +59,15 @@ Section "install"
 
     # create the shortcuts to run stuff
     setOutPath $INSTDIR\.inzight
-    createShortcut "$INSTDIR\iNZight.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
-    createShortcut "$DESKTOP\iNZight.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$INSTDIR\iNZight.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$DESKTOP\iNZight.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
 
     setOutPath $INSTDIR\.vit
-    createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
-    createShortcut "$DESKTOP\VIT.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$DESKTOP\VIT.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
 
     setOutPath $INSTDIR\.update
-    createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWNORMAL
+    createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWNORMAL
 
 
 SectionEnd
