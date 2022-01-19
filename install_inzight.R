@@ -5,21 +5,23 @@ options(
   )
 )
 
+inz_pkgs <- c(
+  'iNZight',
+  'iNZightPlots',
+  'iNZightMR',
+  'iNZightTS',
+  'iNZightTools',
+  'iNZightRegression',
+  'vit',
+  'FutureLearnData',
+  'iNZightUpdate'
+)
+
 # install iNZight packages (except iNZightModules)
 install.packages(
-  c(
-    'iNZight',
-    'iNZightPlots',
-    'iNZightMR',
-    'iNZightTS',
-    'iNZightTools',
-    'iNZightRegression',
-    'vit',
-    'FutureLearnData',
-    'iNZightUpdate'
-   ),
-   dependencies = TRUE,
-   type = "binary"
+  inz_pkgs,
+  dependencies = TRUE,
+  type = "binary"
 )
 
 # install iNZightModules, and manually some of the dependencies

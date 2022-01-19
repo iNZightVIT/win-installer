@@ -1,9 +1,10 @@
+Unicode true
 !define APPNAME "iNZightVIT"
 !define COMPANY "The University of Auckland"
 # define version from env vars (otherwise it's a dev version)
 !define VERSION "0.0.0.9000"
-!if "$%APPVEYOR_REPO_TAG_NAME%" != "${U+24}%APPVEYOR_REPO_TAG_NAME%"
-!define /redef VERSION "$%APPVEYOR_REPO_TAG_NAME%"
+!if "$%INSTALLER_VERSION%" != "${U+24}%INSTALLER_VERSION%"
+!define /redef VERSION "$%INSTALLER_VERSION%"
 !endif
 
 # apparently this should be specified for all installers
@@ -64,15 +65,15 @@ Section "install"
 
     # create the shortcuts to run stuff
     setOutPath $INSTDIR\.inzight
-    createShortcut "$INSTDIR\iNZight.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
-    createShortcut "$DESKTOP\iNZight.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$INSTDIR\iNZight.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$DESKTOP\iNZight.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
 
     setOutPath $INSTDIR\.vit
-    createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
-    createShortcut "$DESKTOP\VIT.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$INSTDIR\VIT.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
+    createShortcut "$DESKTOP\VIT.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWMINIMIZED
 
     setOutPath $INSTDIR\.update
-    createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\R\bin\i386\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWNORMAL
+    createShortcut "$INSTDIR\Update.lnk" "$INSTDIR\R\bin\x64\Rgui.exe" "--quiet --no-save --no-restore" "$INSTDIR\inst\icon.ico" "" SW_SHOWNORMAL
 
 
 SectionEnd
