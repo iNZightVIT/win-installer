@@ -80,12 +80,24 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 	tmp <- grDevices::dev.off()
 	rm(tmp)
 
+	awin <- NULL
+	if (app == "inzight" &&
+		utils::packageVersion("iNZight") > numeric_version('4.1.3')) {
+
+		awin <- iNZight:::iNZAboutWidget$new(
+			title = "Loading iNZight ..."
+		)
+
+	}
+
 	suppressWarnings(
 		switch(app,
 			'inzight' = iNZight(dispose_fun = q, save = "no"),
 			'vit' = iNZightVIT(dispose = TRUE)
 		)
 	)
+
+	if (!is.null(awin)) dispose(awin$win)
 }
 
 do_update <- function() {
