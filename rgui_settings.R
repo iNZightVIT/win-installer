@@ -1,3 +1,5 @@
+print(list.files(recursive = TRUE))
+
 # update R GUI setting
 conf_file <- file.path('R', 'etc', 'Rconsole')
 conf <- readLines(conf_file)
