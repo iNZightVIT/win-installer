@@ -44,9 +44,9 @@ Section "install"
     File /r "inst"
     File "launcher.R"
 
-    ; CreateDirectory $INSTDIR\.cache
-    #CreateDirectory $INSTDIR\.config
-    ; CreateDirectory $INSTDIR\data
+    CreateDirectory $INSTDIR\.cache
+    CreateDirectory $INSTDIR\.config
+    CreateDirectory $INSTDIR\data
 
     # Make things hidden:
     SetFileAttributes R HIDDEN
@@ -55,8 +55,8 @@ Section "install"
     SetFileAttributes .update HIDDEN
     SetFileAttributes .library HIDDEN
     SetFileAttributes inst HIDDEN
-    ; SetFileAttributes .cache HIDDEN
-    ; SetFileAttributes .config HIDDEN
+    SetFileAttributes .cache HIDDEN
+    SetFileAttributes .config HIDDEN
     SetFileAttributes launcher.R HIDDEN
 
 
@@ -94,8 +94,8 @@ Section "uninstall"
     RMDIR /r $INSTDIR\.vit
     RMDIR /r $INSTDIR\.update
     RMDIR /r $INSTDIR\inst
-    ; RMDIR /r $INSTDIR\.config
-    ; RMDIR /r $INSTDIR\.cache
+    RMDIR /r $INSTDIR\.config
+    RMDIR /r $INSTDIR\.cache
     delete $INSTDIR\launcher.R
 
     # remove desktop shortcuts
