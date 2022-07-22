@@ -14,7 +14,7 @@ Sys.setenv(
 	'R_USER_CACHE_DIR' = file.path(getwd(), ".cache"),
 	'R_USER_DATA_DIR' = file.path(getwd(), "data"),
 	'INZIGHT_MODULES_DIR' = file.path(getwd(), "modules"),
-	'R_CACHE_ROOTPATH' = file.path(getwd(), ".cache")
+	'R_CACHE_ROOTPATH' = file.path(getwd(), ".cache"),
 	# can prevent any update/install of packages
 	'LOCK_PACKAGES' = TRUE,
 	# prevent bootstrapping (computationally intensive)
