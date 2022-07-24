@@ -53,7 +53,7 @@ start_app <- function(app = c('inzight', 'vit', 'update')) {
 				file.path(
 					getwd(),
 					"inst",
-					"inzight-banner.png"
+					"inzight-banner_guinz.png"
 				),
 			    exists("rasterImage")
 			)
