@@ -33,6 +33,37 @@ create_dir(tools::R_user_dir("iNZight", "data"))
 # set library path
 .libPaths(file.path(getwd(), 'library'))
 
+## ------------------------------------------------------------------------themeing
+guinz_palette <- list(
+    primary = c("#004775", "#00a9e9", "#39b54a"),
+    secondary = c("#6f818e", "#fdb913", "#d2232a")
+)
+
+## custom ggplot theme - this will be applied as the 'default'
+theme_guinz <- function() {
+    ggplot2::theme_classic(
+        base_family = "Myriad Pro"
+    ) +
+        ggplot2::theme(
+            legend.position = "bottom",
+            axis.line = ggplot2::element_blank(),
+            axis.ticks = ggplot2::element_blank(),
+            panel.grid.major.x = ggplot2::element_line(
+                size = 0.5,
+                color = "gray80"
+            ),
+            panel.background = ggplot2::element_rect(fill = "white")
+        )
+}
+## override the default ggplot2 bar colour - use similar commands to adjust other colours
+ggplot2::update_geom_defaults("bar", list(fill = guinz_palette$primary[2]))
+ggplot2::theme_set(theme_guinz())
+
+## set default colour palettes for iNZight and ggplot2
+options(
+    inzight.default.palette.cat = c(guinz_palette$primary, guinz_palette$secondary),
+    ggplot2.discrete.fill = c(guinz_palette$primary, guinz_palette$secondary)
+)
 
 start_app <- function(app = c('inzight', 'vit', 'update')) {
 	app = match.arg(app)
