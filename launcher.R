@@ -62,6 +62,9 @@ ggplot2::theme_set(theme_guinz())
 ## set default colour palettes for iNZight and ggplot2
 options(
     inzight.default.palette.cat = c(guinz_palette$primary, guinz_palette$secondary),
+	inzight.default.par = iNZightPlots::inzpar(
+		bar.fill = guinz_palette$primary[2]
+	),
     ggplot2.discrete.fill = c(guinz_palette$primary, guinz_palette$secondary)
 )
 
