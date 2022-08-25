@@ -66,7 +66,12 @@ options(
     inzight.default.par = iNZightPlots::inzpar(
         bar.fill = guinz_palette$primary[2]
     ),
-    inzight.default.ggtheme.name = "GUiNZ (Default)",
+    inzight.default.plottypes = list(
+        cat = "gg_column",
+        catcat = "gg_column",
+        num = "gg_density"
+    ),
+    inzight.default.ggtheme.name = "GUiNZ",
     inzight.default.palette.cat.name = "GUiNZ",
     ggplot2.discrete.fill = cat_pal
 )
