@@ -47,6 +47,7 @@ Section "install"
     CreateDirectory $INSTDIR\.cache
     CreateDirectory $INSTDIR\.config
     CreateDirectory $INSTDIR\data
+    CreateDirectory $INSTDIR\modules
 
     # Make things hidden:
     SetFileAttributes R HIDDEN
