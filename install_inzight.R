@@ -17,12 +17,17 @@ inz_pkgs <- c(
   "iNZightUpdate"
 )
 
+if (!requireNamespace("pak", quietly = TRUE)) {
+  install.packages("pak", type = "source")
+}
+
 # install iNZight packages (except iNZightModules)
-install.packages(
-  inz_pkgs,
-  dependencies = TRUE,
-  type = "binary"
-)
+pak::pak(inz_pkgs)
+# install.packages(
+#   inz_pkgs,
+#   dependencies = TRUE,
+#   type = "binary"
+# )
 
 if (!requireNamespace("iNZight")) {
   stop("iNZight not installed")
@@ -30,14 +35,15 @@ if (!requireNamespace("iNZight")) {
 
 # install iNZightModules, and manually some of the dependencies
 # (basically, ensuring iNZightMaps and sf aren't installed)
-install.packages(
-  c(
-    "iNZightModules",
-    "rgl",
-    "mgcv"
-  ),
-  type = "binary"
-)
+pak::pak(c("iNZightModules", "rgl", "mgcv"))
+# install.packages(
+#   c(
+#     "iNZightModules",
+#     "rgl",
+#     "mgcv"
+#   ),
+#   type = "binary"
+# )
 
 # create directories
 # dir.create(file.path(".cache", "R", "iNZight"), recursive = TRUE)
